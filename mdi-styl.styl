@@ -1,0 +1,41 @@
+@import('./mdi-styl.config');
+@import('./mdi-styl.icons');
+
+.{$MdiCssPrefix}{
+	&:before, &:after{
+		font-size               : $MdiFontSize;
+		line-height             : $MdiLineHeight;
+		font-family             : $__MdiFontName;
+		-webkit-font-smoothing  : antialiased;
+		-moz-osx-font-smoothing : grayscale;
+		text-rendering          : auto; // optimizelegibility throws things off #1094
+	}
+}
+
+@font-face {
+	font-family: $__MdiFontName;
+	src: url(join('', $MdiFontPath, $MdiFilename, ".eot?v="));
+	src: url(join('', $MdiFontPath, $MdiFilename, ".eot?#iefix")) format("embedded-opentype"), 
+	   url(join('', $MdiFontPath, $MdiFilename, ".woff2")) format("woff2"), 
+	   url(join('', $MdiFontPath, $MdiFilename, ".woff")) format("woff"), 
+	   url(join('', $MdiFontPath, $MdiFilename, ".ttf")) format("truetype"), 
+	   url(join('', $MdiFontPath, $MdiFilename, ".svg?#materialdesigniconsregular")) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+mdi-include-all(){
+	for icon, hex in $MdiIcons{
+		.{$MdiIconBeforePrefix}-{icon}:before,
+		.{$MdiIconAfterPrefix}-{icon}:after{
+			content: s('"\%s"', hex);
+		}
+	}	
+}
+
+mdi-include(icon){
+	.{$MdiIconBeforePrefix}-{icon}:before,
+	.{$MdiIconAfterPrefix}-{icon}:after{
+		content: s('"\%s"', $MdiIcons[icon]);
+	}
+}
