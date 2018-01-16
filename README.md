@@ -1,2 +1,2 @@
 # mdi-styl
-Material Design Icons for Stylus (mdi port)
+Material Design Icons for Stylus (MDI Port)

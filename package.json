@@ -1,0 +1,19 @@
+{
+  "name": "mdi-styl",
+  "version": "0.0.1",
+  "description": "MDI Stylus manual port 2.1.19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amansx/mdi-styl.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amansx/mdi-styl/issues"
+  },
+  "homepage": "https://github.com/amansx/mdi-styl#readme"
+}
